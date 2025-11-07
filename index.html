@@ -128,6 +128,10 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
  .card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,.35);border-color:#274065}
  .yt-card{display:grid;grid-template-columns:120px 1fr;gap:1rem;align-items:center}
  @media (max-width:520px){.yt-card{grid-template-columns:1fr}}
+ .video-grid{margin-top:1.5rem;display:grid;gap:1.2rem;justify-items:center}
+ .video-grid iframe{width:min(100%,420px);aspect-ratio:16/9;border-radius:12px;border:1px solid var(--border);background:#0c1422}
+ .stock-videos{margin-top:0;justify-items:stretch}
+ .stock-videos iframe{width:100%;max-width:100%}
  .yt-thumb{width:100%;aspect-ratio:1.6/1;object-fit:cover;border-radius:10px;border:1px solid var(--border);transition:transform .35s ease}
  .stock-img,.game-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;border:1px solid var(--border);background:#0c1422;transition:transform .35s ease}
  .card:hover .yt-thumb,.card:hover .stock-img,.card:hover .game-img{transform:scale(1.03)}
@@ -271,6 +275,10 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
           </div>
         </div>
       </div>
+      <div class="reveal video-grid">
+        <iframe src="https://www.youtube.com/embed/q5bUN3F9qNA?si=uWpSeJCgcsq7GWua" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Sbw31TkbNGg?si=L5JX2F6m1MEqtmB5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
@@ -292,7 +300,11 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
           </ul>
         </div>
         <div class="reveal card">
-          <img class="stock-img" src="Screenshot (26).png" alt="BTC/USDT chart">
+          <h3 style="margin:0 0 .8rem">Recent Stock Market Videos</h3>
+          <div class="video-grid stock-videos">
+            <iframe src="https://www.youtube.com/embed/QLFI3oJUFvc?si=KUBKUvZabr5U-0W_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/EQy0ykef2mg?si=eWi_iOoLmt2i0Fxy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </div>
