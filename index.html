@@ -144,6 +144,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
  .game-tilt:hover .game-img{transform:scale(1.06)}
  .game-img{will-change:transform}
  .game-bob{animation:gameBob 6s ease-in-out infinite alternate}
+ .game-stream{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:12px;border:1px solid var(--border);overflow:hidden;background:#0c1422}
+ .game-stream iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
  .ripple{position:absolute;inset:auto auto 0 0;width:20px;height:20px;border-radius:9999px;background:rgba(58,160,255,.25);transform:translate(-50%,-50%) scale(0);animation:ripple .6s ease-out forwards;pointer-events:none}
 
  .list{display:flex;flex-wrap:wrap;gap:.5rem}
@@ -322,6 +324,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
       </div>
       <div class="grid game-grid" style="margin-top:1rem">
         <div class="reveal card game-tilt"><video class="game-img game-bob" src="pubg dance.mp4" controls loop playsinline poster="Screenshot (29).png"></video></div>
+        <div class="reveal card game-tilt"><div class="game-stream"><iframe src="https://www.youtube.com/embed/OzZgEgYt6EI?si=O9oxxTzF5ukRw_Rp&amp;start=215" title="YouTube livestream" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
         <div class="reveal card game-tilt"><img class="game-img" src="Screenshot (31).png" alt="PUBG battlegrounds screenshot 2"></div>
       </div>
     </div>
