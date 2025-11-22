@@ -160,6 +160,44 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
  .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
  .reveal.visible{opacity:1;transform:none}
 
+ /* Compact Photo Gallery */
+ .photo-gallery {
+  padding: 1.5rem 0;
+  background: var(--bg-elev);
+ }
+
+ .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+ }
+
+ .gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  aspect-ratio: 3/4;
+ }
+
+ .gallery-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+ }
+
+ .gallery-item:hover .gallery-img {
+  transform: scale(1.03);
+ }
+
  @keyframes glowPulse{
   0%,100%{box-shadow:0 10px 30px rgba(0,0,0,.35), 0 0 0 0 rgba(58,160,255,.25)}
   50%{box-shadow:0 10px 36px rgba(0,0,0,.4), 0 0 0 10px rgba(58,160,255,.15)}
@@ -218,28 +256,47 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
 </header>
 
 <main>
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="reveal">
-        <span class="badge">
-          <span style="width:8px;height:8px;border-radius:999px;background:var(--good)"></span>
-          Tech in Sagein
-        </span>
-        <h1 class="title">Hi, I’m <span style="color:var(--accent)">Tulasidas Gouda</span></h1>
-        <p class="subtitle">From Ankola, Uttar Kannada, Karnataka. I create Kannada content on technology and stock market learning, making complex topics simple.</p>
-        <div class="actions">
-          <a class="btn primary" href="http://www.youtube.com/@TechinSagein" target="_blank" rel="noopener">Visit YouTube Channel</a>
-          <a class="btn" href="#contact">Contact Me</a>
-          <span class="pill lang delay1">Kannada</span>
-          <span class="pill lang delay2">English</span>
-          <span class="pill lang delay3">Hindi</span>
+  <section id="home" class="hero" style="padding: 4rem 0;">
+    <div class="container">
+      <div class="hero-grid" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center;">
+        <div class="reveal" style="text-align: left;">
+          <div style="margin-bottom: 1.5rem;">
+            <h2 style="font-size: 1.5rem; color: var(--accent); margin: 0 0 0.5rem; font-weight: 600;">Tech in Sagein</h2>
+            <h1 class="title" style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1.2; margin: 0 0 1.5rem;">
+              Hi, I'm <span style="color: var(--accent);">Tulasidas Gouda</span>
+            </h1>
+            <p class="subtitle" style="font-size: 1.1rem; line-height: 1.6; color: var(--muted); margin: 0 0 2rem;">
+              From Ankola, Uttar Kannada, Karnataka. I create Kannada content on technology and stock market learning, making complex topics simple.
+            </p>
+          </div>
+          
+          <div class="actions" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+            <a class="btn primary" href="http://www.youtube.com/@TechinSagein" target="_blank" rel="noopener" style="padding: 0.7rem 1.8rem; font-size: 1rem; font-weight: 500;">
+              Visit YouTube Channel
+            </a>
+            <a class="btn" href="#contact" style="padding: 0.7rem 1.8rem; font-size: 1rem; font-weight: 500;">
+              Contact Me
+            </a>
+          </div>
+          
+          <div class="language-pills" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <span class="pill" style="padding: 0.4rem 1.1rem; font-size: 0.9rem; background: var(--card); border: 1px solid var(--border);">Kannada</span>
+            <span class="pill" style="padding: 0.4rem 1.1rem; font-size: 0.9rem; background: var(--card); border: 1px solid var(--border);">English</span>
+            <span class="pill" style="padding: 0.4rem 1.1rem; font-size: 0.9rem; background: var(--card); border: 1px solid var(--border);">Hindi</span>
+          </div>
         </div>
-      </div>
-      <div class="reveal" style="justify-self:center">
-        <div class="avatar"><img src="Screenshot (5).png" alt="Profile photo of Tulasidas Gouda"></div>
+        
+        <div class="reveal" style="position: relative; text-align: center;">
+          <div style="position: relative; display: inline-block;">
+            <img src="Screenshot (5).png" alt="Tulasidas Gouda" style="width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); border: 4px solid var(--card);">
+            <div style="position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; border: 2px solid var(--accent); border-radius: 16px; z-index: -1; opacity: 0.3;"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+
 
   <section id="about">
     <div class="container grid cols-2">
@@ -257,6 +314,34 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
       <div class="reveal card">
         <img class="yt-thumb" src="Screenshot (28).png" alt="Tech in Sagein channel banner">
       </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section class="photo-gallery">
+    <div class="container">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="About Me Photo/WhatsApp Image 2025-11-22 at 7.36.05 PM 2.jpeg" alt="Tulasidas Gouda Photo 1" class="gallery-img">
+        </div>
+        <div class="gallery-item">
+          <img src="About Me Photo/WhatsApp Image 2025-11-22 at 7.36.05 PM.jpeg" alt="Tulasidas Gouda Photo 2" class="gallery-img">
+        </div>
+        <div class="gallery-item">
+          <img src="About Me Photo/WhatsApp Image 2025-11-22 at 7.37.16 PM.jpeg" alt="Tulasidas Gouda Photo 3" class="gallery-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section" style="text-align: center; padding: 4rem 0; background: var(--bg-elev);">
+    <div class="container">
+      <h2 class="title" style="font-size: clamp(2rem, 5vw, 3rem); margin: 0; line-height: 1.2;">
+        Hi, I'm <span style="color: var(--accent);">Tulasidas Gouda</span>
+      </h2>
+      <p class="subtitle" style="max-width: 600px; margin: 1rem auto 0; color: var(--muted);">
+        Content Creator | Tech Enthusiast | Stock Market Analyst
+      </p>
     </div>
   </section>
 
